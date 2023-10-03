@@ -29,7 +29,6 @@ const io = require("socket.io")(server, {
 
 
 
-
 // Bodyparser middleware
 app.use(
   bodyParser.urlencoded({
@@ -39,7 +38,7 @@ app.use(
 
 app.use(bodyParser.json());
 
-app.use(cors({ origin: 'http://localhost:3000' }));
+app.use(cors({ origin: true }));
 // Passport middleware
 app.use(passport.initialize());
 // Passport config
