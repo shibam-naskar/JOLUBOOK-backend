@@ -16,6 +16,9 @@ const list = async (req, res) => {
       .exec()
     const mainArray = posts;
     const chunkSize = 10;
+    if(mainArray.length==0){
+      res.json([])
+    }
     const result = chunkArray(mainArray, chunkSize);
     console.log("array")
     console.log(result[1].length)
