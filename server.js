@@ -39,7 +39,7 @@ app.use(
 
 app.use(bodyParser.json());
 
-app.use(cors({ origin: '*' }));
+app.use(cors({ origin: 'http://localhost:3000' }));
 // Passport middleware
 app.use(passport.initialize());
 // Passport config
