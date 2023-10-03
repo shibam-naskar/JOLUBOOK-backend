@@ -28,7 +28,7 @@ const io = require("socket.io")(server, {
 });
 
 
-app.use(cors())
+
 
 // Bodyparser middleware
 app.use(
@@ -39,7 +39,7 @@ app.use(
 
 app.use(bodyParser.json());
 
-app.use(cors({ origin: true }));
+app.use(cors({ origin: '*' }));
 // Passport middleware
 app.use(passport.initialize());
 // Passport config
