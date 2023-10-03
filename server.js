@@ -17,6 +17,7 @@ const socketio = require('socket.io');
 const server = http.createServer(app)
 const path = require("path");
 dotenv.config();
+const cors = require("cors")
 
 
 const io = require("socket.io")(server, {
@@ -28,6 +29,7 @@ const io = require("socket.io")(server, {
 });
 
 
+app.use(cors())
 
 // Bodyparser middleware
 app.use(
