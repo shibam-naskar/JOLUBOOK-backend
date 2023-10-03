@@ -17,13 +17,13 @@ const list = async (req, res) => {
     const mainArray = posts;
     const chunkSize = 10;
     if(mainArray.length==0){
-      res.json([])
+      return res.json([])
     }
     const result = chunkArray(mainArray, chunkSize);
     console.log("array")
     console.log(result[1].length)
     if(result.length<=req.query.page){
-      res.json([])
+      return res.json([])
     }
     res.json(result[req.query.page])
   } catch (error) {
