@@ -10,7 +10,7 @@ const list = async (req, res) => {
     following.push(req.profile._id)
 
     try {
-      let posts = await Post.find({ author: { $in: req.profile.following } })
+      let posts = await Post.find()
         .populate('author', '_id name image')
         .populate('comments.commentedBy', '_id name image')
         .sort('-created')
